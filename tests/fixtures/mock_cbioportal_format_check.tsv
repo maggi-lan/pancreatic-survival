@@ -1,0 +1,179 @@
+Patient ID	Sample ID	Cancer Type	Cancer Type Detailed	Mutation Count	Fraction Genome Altered	Diagnosis Age	Sex	Adjuvant Postoperative Targeted Therapy Administered Indicator	American Joint Committee on Cancer Tumor Stage Code	Radiation Therapy	Overall Survival (Months)	Overall Survival Status
+TCGA-X0	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	104	0.2367	85	Male	YES	T3	NO	13.9	1:DECEASED
+TCGA-X1	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	123	0.8975	68	Female	YES	T2		26.89	1:DECEASED
+TCGA-X2	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	20	0.1232	71	Female		T3		3.25	1:DECEASED
+TCGA-X3	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	75	0.5332	82	Male	NO	T3	NO	2.77	1:DECEASED
+TCGA-X4	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	9	0.05	65	Male	YES	T3		4.28	1:DECEASED
+TCGA-X5	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	144	0.9392	76	Male	YES	T3	NO	6.09	1:DECEASED
+TCGA-X6	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	81	0.1716	79	Male		T3		0.17	1:DECEASED
+TCGA-X7	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	45	0.41	46	Female	YES	T1		17.41	0:LIVING
+TCGA-X8	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	14	0.5468	37	Female	NO	T3		10.37	1:DECEASED
+TCGA-X9	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	23	0.7187	50	Male	YES	T2		10.66	1:DECEASED
+TCGA-X10	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	45	0.9375	50	Female	NO	T2	NO	17.49	0:LIVING
+TCGA-X11	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	125	0.7364	81	Female	NO	T4	NO	5.62	1:DECEASED
+TCGA-X12	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	147	0.3474	83	Female		T3	NO	1.08	1:DECEASED
+TCGA-X13	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	48	0.0753	35	Female	NO	T3		16.98	1:DECEASED
+TCGA-X14	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	54	0.7074	61	Female	YES	T3	NO	17.99	0:LIVING
+TCGA-X15	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	127	0.9725	78	Female	YES	T3	NO	2.64	1:DECEASED
+TCGA-X16	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	19	0.017	41	Female	NO	T3		7.15	0:LIVING
+TCGA-X17	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	93	0.7747	77	Female	NO	T3	NO	3.69	0:LIVING
+TCGA-X18	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	91	0.1761	41	Female	YES	T3	NO	17.07	1:DECEASED
+TCGA-X19	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	78	0.46	59	Male	YES	T3		19.65	1:DECEASED
+TCGA-X20	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	126	0.5226	78	Female	NO	T3	NO	23.14	1:DECEASED
+TCGA-X21	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	17	0.6144	51	Male	NO	T3		27.03	1:DECEASED
+TCGA-X22	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	46	0.9895	53	Male		T4		7.62	1:DECEASED
+TCGA-X23	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	119	0.6874	49	Female	YES	T3	NO	11.29	0:LIVING
+TCGA-X24	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	48	0.3924	73	Female	YES	T4		13.23	0:LIVING
+TCGA-X25	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	14	0.715	48	Male	NO	T1	YES	1.47	1:DECEASED
+TCGA-X26	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	71	0.4667	87	Male	NO	T3	NO	23.87	1:DECEASED
+TCGA-X27	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	144	0.4131	58	Male	NO	T3		12.1	1:DECEASED
+TCGA-X28	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	119	0.3657	60	Male		T3	NO	4.88	1:DECEASED
+TCGA-X29	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	132	0.4934	61	Male		T3	NO	29.0	0:LIVING
+TCGA-X30	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	46	0.2812	65	Male		T3		9.21	0:LIVING
+TCGA-X31	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	48	0.2421	64	Female	NO	T1		5.68	0:LIVING
+TCGA-X32	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	27	0.1485	62	Male	YES	T3	NO	16.35	1:DECEASED
+TCGA-X33	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	23	0.4402	87	Male	NO	T3	NO	12.36	1:DECEASED
+TCGA-X34	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	45	0.2933	77	Male	YES	T3	NO	14.04	0:LIVING
+TCGA-X35	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	133	0.8369	77	Male	NO	T3	NO	0.82	1:DECEASED
+TCGA-X36	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	102	0.8479	72	Female	NO	T3	NO	2.5	0:LIVING
+TCGA-X37	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	74	0.3439	67	Female	NO	T3	NO	3.05	1:DECEASED
+TCGA-X38	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	73	0.6191	53	Male	YES	T3		17.7	1:DECEASED
+TCGA-X39	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	23	0.9023	87	Male	YES	T3	NO	5.12	1:DECEASED
+TCGA-X40	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	76	0.3592	59	Male	YES	T3	NO	7.6	1:DECEASED
+TCGA-X41	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	77	0.5547	46	Female	YES	T4	NO	27.82	0:LIVING
+TCGA-X42	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	116	0.4436	79	Female		T3	NO	3.63	1:DECEASED
+TCGA-X43	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	40	0.6503	43	Female	NO	T3		7.78	0:LIVING
+TCGA-X44	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	130	0.9598	80	Female	YES	T3		32.09	0:LIVING
+TCGA-X45	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	64	0.1386	67	Female	NO	T4	NO	4.52	0:LIVING
+TCGA-X46	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	13	0.9654	41	Female	NO	T3	NO	9.77	1:DECEASED
+TCGA-X47	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	97	0.6657	37	Male	YES	TX		9.9	0:LIVING
+TCGA-X48	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	92	0.7959	58	Female		T3	NO	4.23	1:DECEASED
+TCGA-X49	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	137	0.6351	36	Male		T3		9.29	1:DECEASED
+TCGA-X50	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	85	0.8703	42	Male	YES	T4	YES	44.63	0:LIVING
+TCGA-X51	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	121	0.3262	62	Male	YES	T3		11.64	1:DECEASED
+TCGA-X52	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	39	0.708	86	Female	NO	T3	NO	10.31	1:DECEASED
+TCGA-X53	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	28	0.2641	59	Male		T3	NO	3.8	1:DECEASED
+TCGA-X54	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	98	0.5087	77	Female	YES	T3	NO	11.71	1:DECEASED
+TCGA-X55	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	74	0.6815	83	Male	NO	T3	NO	2.86	0:LIVING
+TCGA-X56	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	119	0.2011	78	Female		T4		14.74	1:DECEASED
+TCGA-X57	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	76	0.0612	68	Male		T2		0.03	1:DECEASED
+TCGA-X58	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	120	0.7909	58	Male	YES	T3	NO	14.02	1:DECEASED
+TCGA-X59	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	148	0.8089	62	Female	YES	T3		9.8	1:DECEASED
+TCGA-X60	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	145	0.6657	49	Female		T4	NO	15.43	0:LIVING
+TCGA-X61	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	17	0.3214	61	Female	YES	T3	NO	1.19	0:LIVING
+TCGA-X62	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	145	0.6582	55	Female	YES	T3	NO	2.55	0:LIVING
+TCGA-X63	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	79	0.0839	48	Female	NO	T3	NO	25.2	0:LIVING
+TCGA-X64	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	59	0.6625	87	Male	YES	T3	NO	4.34	0:LIVING
+TCGA-X65	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	137	0.5762	35	Female	NO	T3		9.91	0:LIVING
+TCGA-X66	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	29	0.6172	40	Male	YES	T4		15.66	0:LIVING
+TCGA-X67	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	62	0.447	45	Male		T3	YES	4.1	0:LIVING
+TCGA-X68	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	125	0.2252	86	Female	YES	T3		2.36	0:LIVING
+TCGA-X69	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	42	0.7259	71	Female	NO	T3		18.06	1:DECEASED
+TCGA-X70	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	140	0.4641	81	Female	YES	T2	NO	5.76	1:DECEASED
+TCGA-X71	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	85	0.7454	45	Male	YES	T3	YES	4.68	1:DECEASED
+TCGA-X72	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	79	0.3642	73	Female	YES	T4		18.87	1:DECEASED
+TCGA-X73	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	51	0.0878	54	Male	YES	T3	NO	1.42	0:LIVING
+TCGA-X74	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	23	0.5425	60	Female	YES	T2		11.78	0:LIVING
+TCGA-X75	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	139	0.6228	35	Female	NO	T3	NO	24.85	1:DECEASED
+TCGA-X76	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	5	0.9218	67	Female	YES	T3		16.71	1:DECEASED
+TCGA-X77	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	17	0.8878	78	Male	YES	T3	NO	19.25	1:DECEASED
+TCGA-X78	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	15	0.0571	70	Female		T3	NO	5.1	0:LIVING
+TCGA-X79	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	34	0.7718	43	Male		T3	NO	14.99	0:LIVING
+TCGA-X80	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	111	0.2614	63	Female		T4		2.23	0:LIVING
+TCGA-X81	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	17	0.6972	49	Male	YES	T3	NO	10.64	0:LIVING
+TCGA-X82	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	26	0.3795	86	Female	YES	T3		0.78	1:DECEASED
+TCGA-X83	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	108	0.3221	81	Female	YES	T3	NO	6.55	0:LIVING
+TCGA-X84	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	9	0.4883	44	Male	YES	T3	NO	28.86	0:LIVING
+TCGA-X85	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	47	0.5305	62	Male	YES	T2	NO	5.42	0:LIVING
+TCGA-X86	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	125	0.6945	84	Male	NO	T3	YES	7.85	0:LIVING
+TCGA-X87	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	135	0.6379	79	Male	YES	T3	NO	15.89	1:DECEASED
+TCGA-X88	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	76	0.6783	72	Male	YES	T3		11.08	1:DECEASED
+TCGA-X89	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	134	0.3841	68	Female		T3		8.23	1:DECEASED
+TCGA-X90	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	133	0.6773	37	Female	YES	T2	NO	4.81	0:LIVING
+TCGA-X91	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	140	0.3454	74	Male	YES	T4	NO	22.33	1:DECEASED
+TCGA-X92	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	40	0.6075	60	Male	NO	T3	NO	6.44	1:DECEASED
+TCGA-X93	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	42	0.4595	39	Female	YES	T3		4.02	1:DECEASED
+TCGA-X94	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	100	0.5628	47	Female	NO	T3	NO	28.19	0:LIVING
+TCGA-X95	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	5	0.0175	63	Male	YES	T4		5.42	0:LIVING
+TCGA-X96	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	43	0.4988	73	Female	NO	T2		12.45	0:LIVING
+TCGA-X97	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	61	0.22	61	Female	NO	T2		1.09	1:DECEASED
+TCGA-X98	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	133	0.3858	67	Male	NO	T1		29.81	1:DECEASED
+TCGA-X99	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	144	0.0738	81	Male	YES	T3		16.31	1:DECEASED
+TCGA-X100	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	54	0.6569	71	Male	NO	T3	NO	2.07	1:DECEASED
+TCGA-X101	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	115	0.8935	54	Female		T3	NO	6.55	1:DECEASED
+TCGA-X102	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	83	0.3546	69	Male	YES	T3	NO	1.67	0:LIVING
+TCGA-X103	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	13	0.1051	66	Female	YES	T2	NO	2.33	1:DECEASED
+TCGA-X104	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	62	0.6203	40	Female	YES	T3	NO	3.94	0:LIVING
+TCGA-X105	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	106	0.127	38	Female		T3	NO	6.68	0:LIVING
+TCGA-X106	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	107	0.8916	69	Male		T3		5.15	1:DECEASED
+TCGA-X107	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	137	0.1225	55	Male	YES	T1	NO	34.06	1:DECEASED
+TCGA-X108	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	96	0.3619	66	Male		T3	NO	2.13	1:DECEASED
+TCGA-X109	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	145	0.4947	52	Male	YES	T4	NO	8.88	1:DECEASED
+TCGA-X110	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	70	0.1179	46	Male	NO	T3	NO	5.91	1:DECEASED
+TCGA-X111	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	108	0.3187	42	Male	YES	T3		2.55	0:LIVING
+TCGA-X112	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	94	0.2753	55	Male		T3	YES	31.8	1:DECEASED
+TCGA-X113	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	130	0.7133	78	Male	YES	T3	NO	15.3	1:DECEASED
+TCGA-X114	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	139	0.9863	56	Male	YES	T3	NO	4.47	1:DECEASED
+TCGA-X115	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	127	0.3628	55	Male	NO	T3	NO	17.2	1:DECEASED
+TCGA-X116	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	143	0.7907	65	Female	YES	T2	YES	18.71	0:LIVING
+TCGA-X117	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	56	0.1403	86	Male	YES	T3	NO	14.7	0:LIVING
+TCGA-X118	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	148	0.5799	55	Male	YES	T4	NO	3.57	1:DECEASED
+TCGA-X119	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	19	0.4327	66	Female		T3	NO	1.36	0:LIVING
+TCGA-X120	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	58	0.2882	58	Female	NO	T2		16.86	1:DECEASED
+TCGA-X121	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	110	0.8217	67	Female		T3	NO	9.78	0:LIVING
+TCGA-X122	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	94	0.7464	58	Female	NO	T3		0.03	1:DECEASED
+TCGA-X123	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	24	0.134	68	Female	NO	T2	NO	23.11	0:LIVING
+TCGA-X124	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	103	0.2924	63	Male		T3	NO	4.01	1:DECEASED
+TCGA-X125	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	60	0.8195	70	Female	NO	T3		14.29	1:DECEASED
+TCGA-X126	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	120	0.9924	85	Male	NO	T3	NO	6.03	1:DECEASED
+TCGA-X127	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	149	0.6116	42	Male	YES	T3		13.34	0:LIVING
+TCGA-X128	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	34	0.8717	64	Female	YES	T3		5.08	1:DECEASED
+TCGA-X129	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	86	0.9842	58	Male	NO	T2		1.79	1:DECEASED
+TCGA-X130	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	9	0.7405	53	Female	YES	T3	YES	5.25	0:LIVING
+TCGA-X131	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	80	0.6447	47	Male		T4		1.03	1:DECEASED
+TCGA-X132	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	127	0.2212	37	Male	NO	T3		29.9	1:DECEASED
+TCGA-X133	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	142	0.3704	56	Male	YES	T3		7.38	1:DECEASED
+TCGA-X134	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	119	0.6236	78	Male		T3	NO	3.4	0:LIVING
+TCGA-X135	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	46	0.9264	40	Male	YES	T3		23.5	0:LIVING
+TCGA-X136	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	59	0.3018	56	Male	NO	T2		5.98	1:DECEASED
+TCGA-X137	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	149	0.3952	86	Female	YES	T3	NO	5.19	1:DECEASED
+TCGA-X138	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	119	0.0222	85	Female		T3	NO	0.79	1:DECEASED
+TCGA-X139	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	137	0.6967	46	Male	NO	T3	YES	21.98	1:DECEASED
+TCGA-X140	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	40	0.4436	35	Female		T3		6.5	0:LIVING
+TCGA-X141	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	57	0.7977	70	Male	YES	T3		3.86	1:DECEASED
+TCGA-X142	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	124	0.2337	35	Male		T3		7.02	1:DECEASED
+TCGA-X143	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	52	0.6596	50	Male	NO	T3		7.3	1:DECEASED
+TCGA-X144	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	114	0.6731	61	Female	NO	T4		12.06	1:DECEASED
+TCGA-X145	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	23	0.4643	81	Female		T3		5.55	1:DECEASED
+TCGA-X146	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	14	0.1886	39	Female	YES	T1	NO	26.35	0:LIVING
+TCGA-X147	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	137	0.4029	70	Female	YES	T3		3.92	1:DECEASED
+TCGA-X148	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	48	0.745	63	Male	NO	T3		12.96	1:DECEASED
+TCGA-X149	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	31	0.1892	41	Female		T3	NO	1.62	0:LIVING
+TCGA-X150	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	41	0.09	79	Female	YES	T4	NO	7.95	1:DECEASED
+TCGA-X151	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	6	0.4628	79	Male	NO	T3	YES	9.55	0:LIVING
+TCGA-X152	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	115	0.2345	60	Male	YES	T3		21.73	0:LIVING
+TCGA-X153	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	134	0.8006	85	Male	NO	T3		21.73	1:DECEASED
+TCGA-X154	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	7	0.8172	67	Male	NO	T3	NO	4.27	1:DECEASED
+TCGA-X155	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	91	0.9453	82	Male	YES	T2		3.51	0:LIVING
+TCGA-X156	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	57	0.8398	85	Female	NO	T3		4.06	1:DECEASED
+TCGA-X157	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	102	0.6474	65	Male	YES	T3	NO	1.52	1:DECEASED
+TCGA-X158	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	106	0.1871	49	Female		T3	YES	3.5	0:LIVING
+TCGA-X159	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	111	0.823	42	Female	YES	T3	NO	12.12	0:LIVING
+TCGA-X160	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	11	0.7281	64	Female	YES	T3	NO	1.81	0:LIVING
+TCGA-X161	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	11	0.7469	45	Female	NO	T3	NO	15.85	1:DECEASED
+TCGA-X162	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	142	0.6974	74	Male	NO	T3	NO	0.51	1:DECEASED
+TCGA-X163	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	18	0.83	84	Female	NO	T3		5.5	1:DECEASED
+TCGA-X164	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	78	0.2978	48	Female	YES	T3	NO	14.02	0:LIVING
+TCGA-X165	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	77	0.6725	64	Male	NO	T3		29.9	0:LIVING
+TCGA-X166	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	59	0.5173	37	Male	NO	T3		0.97	1:DECEASED
+TCGA-X167	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	12	0.3378	44	Male		T2		40.89	0:LIVING
+TCGA-X168	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	29	0.3268	54	Male	YES	T3	NO	31.66	1:DECEASED
+TCGA-X169	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	78	0.1555	81	Female	YES	T3	YES	1.0	1:DECEASED
+TCGA-X170	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	20	0.4915	86	Male	NO	T3		9.14	1:DECEASED
+TCGA-X171	s	Pancreatic Cancer	Pancreatic Neuroendocrine Tumor	111	0.3687	69	Female	NO	T2	NO	9.93	1:DECEASED
+TCGA-X172	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	129	0.4215	65	Male	YES	T3	NO	9.0	1:DECEASED
+TCGA-X173	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	100	0.8517	65	Female	NO	T3		26.79	1:DECEASED
+TCGA-X174	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	125	0.6815	38	Male	YES	T3		13.64	0:LIVING
+TCGA-X175	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	94	0.6802	54	Male	YES	T3	NO	32.68	0:LIVING
+TCGA-X176	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	105	0.984	87	Female		T2	NO	15.7	0:LIVING
+TCGA-X177	s	Pancreatic Cancer	Pancreatic Adenocarcinoma	11	0.2178	56	Male	YES	T4		27.51	0:LIVING

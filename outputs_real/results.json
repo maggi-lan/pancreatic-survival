@@ -1,0 +1,36 @@
+{
+  "data": "data/pancreas.csv",
+  "n_patients": 146,
+  "best_threshold_days": 240,
+  "cfg": {
+    "folds": 10,
+    "penalizer": 0.1,
+    "max_ci_width": null,
+    "prune_frac": 0.456
+  },
+  "repeats": 3,
+  "cindex": {
+    "none": {
+      "clinical": {
+        "mean_cindex": 0.5206,
+        "std_over_folds": 0.1065
+      }
+    },
+    "in_fold": {
+      "clinical": {
+        "mean_cindex": 0.5446,
+        "std_over_folds": 0.1152
+      }
+    },
+    "leaky": {
+      "clinical": {
+        "mean_cindex": 0.601,
+        "std_over_folds": 0.0857
+      }
+    }
+  },
+  "logrank_p_out_of_fold": 0.7354226370076488,
+  "logrank_p_in_sample": 0.45276111957776954,
+  "radiomic_features_kept_mean": 0,
+  "runtime_s": 8.6
+}
