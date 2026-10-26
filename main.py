@@ -23,11 +23,13 @@ def main():
                     help="drop radiomic features whose 95%% CI is wider than this (paper: 1). Default: use --prune-frac")
     ap.add_argument("--prune-frac", type=float, default=0.456,
                     help="fraction of widest-CI radiomic features to drop (paper removed 410/900)")
+    ap.add_argument("--smote-k", type=int, default=5, help="number of nearest neighbours for SMOTE (default: 5)")
     ap.add_argument("--thresholds", type=int, nargs="+", default=[240, 270, 300, 330, 360])
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     t0 = time.time()
-    cfg = dict(folds=a.folds, penalizer=a.penalizer, max_ci_width=a.max_ci_width, prune_frac=a.prune_frac)
+    cfg = dict(folds=a.folds, penalizer=a.penalizer, max_ci_width=a.max_ci_width,
+               prune_frac=a.prune_frac, smote_k=a.smote_k)
 
     df = load_csv(a.data) if a.data else make_synthetic(seed=a.seed)
     clin, rad = split_columns(df)
@@ -51,7 +53,7 @@ def main():
     print("\nNaive Bayes threshold sweep\n", sweep.round(3).to_string(index=False), f"\n-> best threshold: {thr} days")
     plots.fig_threshold(sweep, f"{a.out}/fig_threshold.png")
     plots.fig_cohort(df.assign(synthetic=0), None, f"{a.out}/fig_cohort.png", "Cohort (before SMOTE)")
-    aug = smote_augment(df, clin + rad, CATEGORICAL_COLS, thr, seed=a.seed)
+    aug = smote_augment(df, clin + rad, CATEGORICAL_COLS, thr, k=a.smote_k, seed=a.seed)
     print(f"SMOTE: {len(df)} real + {int(aug.synthetic.sum())} synthetic patients")
     plots.fig_cohort(aug, thr, f"{a.out}/fig_cohort_smote.png", "After SMOTE (x = synthetic)")
 

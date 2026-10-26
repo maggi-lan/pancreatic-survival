@@ -41,13 +41,14 @@ def cross_validate(df, clin, rad, thr, cfg, mode, seed):
     feats = clin + rad
     work = df.assign(synthetic=0)
     if mode == "leaky":
-        work = smote_augment(df, feats, CATEGORICAL_COLS, thr, seed=seed)
+        work = smote_augment(df, feats, CATEGORICAL_COLS, thr, k=cfg.get("smote_k", 5), seed=seed)
     skf = StratifiedKFold(cfg["folds"], shuffle=True, random_state=seed)
     rows, oof = [], pd.Series(np.nan, index=work.index)
     for f, (tr, te) in enumerate(skf.split(work, work.event)):
         train, test = work.iloc[tr], work.iloc[te]
         if mode == "in_fold":
-            train = smote_augment(train.drop(columns="synthetic"), feats, CATEGORICAL_COLS, thr, seed=seed + f)
+            train = smote_augment(train.drop(columns="synthetic"), feats, CATEGORICAL_COLS, thr,
+                                  k=cfg.get("smote_k", 5), seed=seed + f)
         models, sets = fit_three_models(train, clin, rad, cfg["penalizer"], cfg["max_ci_width"], cfg["prune_frac"])
         row = {"fold": f, "n_radiomic_kept": len(sets.get("radiomic", []))}
         for k, m in models.items():
