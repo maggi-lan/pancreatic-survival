@@ -82,3 +82,28 @@ def fig_partial(curves, path):
         ax.set_title(title, fontsize=9); ax.set_xlabel("Survival days"); ax.set_ylabel("Survival probability")
         ax.set_ylim(0, 1.02); ax.legend(fontsize=8)
     fig.tight_layout(); fig.savefig(path, dpi=150); plt.close(fig)
+
+
+def fig_comparison(unopt, opt, path):
+    sets = [s for s in ["clinical", "radiomic", "combined"] if s in unopt.index]
+    x = np.arange(len(sets))
+    w = 0.35
+    fig, ax = plt.subplots(figsize=(7, 4))
+    b_vals = unopt.loc[sets, "mean_cindex"]
+    o_vals = opt.loc[sets, "mean_cindex"]
+    ax.bar(x - w/2, b_vals, w, label="Unoptimized (Baseline, pen=0.10)", color="#6c757d")
+    ax.bar(x + w/2, o_vals, w, label="Optimized (Tuned, pen=0.05)", color="#2a9d8f")
+    for i, (bv, ov) in enumerate(zip(b_vals, o_vals)):
+        ax.text(x[i] - w/2, bv + 0.01, f"{bv:.3f}", ha="center", fontsize=8)
+        ax.text(x[i] + w/2, ov + 0.01, f"{ov:.3f}", ha="center", fontsize=8, fontweight="bold")
+    ax.axhline(0.5, color="grey", linestyle=":")
+    ax.set_ylabel("Harrell's C-Index (Honest in_fold CV)")
+    ax.set_xticks(x)
+    ax.set_xticklabels([s.capitalize() for s in sets])
+    ax.set_ylim(0.4, 0.75)
+    ax.legend(fontsize=8, loc="upper left")
+    ax.set_title("Comparison: Unoptimized vs Optimized Pipeline")
+    fig.tight_layout()
+    fig.savefig(path, dpi=150)
+    plt.close(fig)
+
