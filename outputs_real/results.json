@@ -1,0 +1,110 @@
+{
+  "data": "SYNTHETIC cohort (seed=0)",
+  "n_patients": 80,
+  "best_threshold_days": 300,
+  "best_cfg": {
+    "folds": 10,
+    "penalizer": 0.05,
+    "max_ci_width": null,
+    "prune_frac": 0.456,
+    "smote_k": 5,
+    "method": "screen",
+    "top_k": 25
+  },
+  "repeats": 1,
+  "results_by_version": {
+    "Unoptimized (Baseline)": {
+      "none": {
+        "clinical": {
+          "mean_cindex": 0.4977,
+          "std_over_folds": 0.1147
+        },
+        "radiomic": {
+          "mean_cindex": 0.5873,
+          "std_over_folds": 0.0844
+        },
+        "combined": {
+          "mean_cindex": 0.6002,
+          "std_over_folds": 0.0975
+        }
+      },
+      "in_fold": {
+        "clinical": {
+          "mean_cindex": 0.5144,
+          "std_over_folds": 0.1347
+        },
+        "radiomic": {
+          "mean_cindex": 0.5977,
+          "std_over_folds": 0.0813
+        },
+        "combined": {
+          "mean_cindex": 0.6223,
+          "std_over_folds": 0.0907
+        }
+      },
+      "leaky": {
+        "clinical": {
+          "mean_cindex": 0.5345,
+          "std_over_folds": 0.1035
+        },
+        "radiomic": {
+          "mean_cindex": 0.7341,
+          "std_over_folds": 0.1101
+        },
+        "combined": {
+          "mean_cindex": 0.7581,
+          "std_over_folds": 0.1192
+        }
+      }
+    },
+    "Optimized (Screening)": {
+      "none": {
+        "clinical": {
+          "mean_cindex": 0.4858,
+          "std_over_folds": 0.1141
+        },
+        "radiomic": {
+          "mean_cindex": 0.6078,
+          "std_over_folds": 0.1135
+        },
+        "combined": {
+          "mean_cindex": 0.6538,
+          "std_over_folds": 0.0983
+        }
+      },
+      "in_fold": {
+        "clinical": {
+          "mean_cindex": 0.4963,
+          "std_over_folds": 0.1472
+        },
+        "radiomic": {
+          "mean_cindex": 0.608,
+          "std_over_folds": 0.1267
+        },
+        "combined": {
+          "mean_cindex": 0.6653,
+          "std_over_folds": 0.0995
+        }
+      },
+      "leaky": {
+        "clinical": {
+          "mean_cindex": 0.5571,
+          "std_over_folds": 0.1057
+        },
+        "radiomic": {
+          "mean_cindex": 0.7237,
+          "std_over_folds": 0.1442
+        },
+        "combined": {
+          "mean_cindex": 0.7093,
+          "std_over_folds": 0.1473
+        }
+      }
+    }
+  },
+  "logrank_p_out_of_fold": 0.11930702611651636,
+  "logrank_p_in_sample": 8.478006090518476e-10,
+  "radiomic_features_kept_mean": 25.0,
+  "runtime_s": 92.6,
+  "true_radiomic_signal_in_top25": 1
+}

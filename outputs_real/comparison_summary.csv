@@ -1,0 +1,10 @@
+mode,model,unoptimized_baseline,optimized_screening,delta,pct_change
+in_fold,clinical,0.5144,0.4963,-0.0181,-3.5%
+in_fold,radiomic,0.5977,0.608,0.0103,+1.7%
+in_fold,combined,0.6223,0.6653,0.043,+6.9%
+leaky,clinical,0.5345,0.5571,0.0226,+4.2%
+leaky,radiomic,0.7341,0.7237,-0.0104,-1.4%
+leaky,combined,0.7581,0.7093,-0.0488,-6.4%
+none,clinical,0.4977,0.4858,-0.0118,-2.4%
+none,radiomic,0.5873,0.6078,0.0206,+3.5%
+none,combined,0.6002,0.6538,0.0536,+8.9%
