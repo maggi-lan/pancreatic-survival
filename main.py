@@ -1,6 +1,7 @@
-"""Run the full pipeline:  python main.py [--data my_data.csv] [--out outputs] [--repeats 1]
+"""Run the full pipeline:  python main.py [--data my_data.csv] [--out outputs] [--repeats 1] [--top-k 25]
 
-By default, runs both the UNOPTIMIZED baseline (penalizer=0.10) and OPTIMIZED tuned version (penalizer=0.05)
+By default, runs both the UNOPTIMIZED baseline (penalizer=0.10, CI pruning to 490 features)
+and OPTIMIZED version (penalizer=0.05, High-Signal Survival Screening to top-K features)
 and outputs a side-by-side performance comparison.
 """
 import argparse, json, os, time
@@ -10,23 +11,24 @@ from survpanc.data import make_synthetic, load_csv, split_columns, CATEGORICAL_C
 from survpanc.naive_bayes import threshold_sweep
 from survpanc.smote import smote_augment
 from survpanc.cox import logrank_test
-from survpanc.pipeline import cross_validate, summarise, fit_three_models
+from survpanc.pipeline import cross_validate, summarise, fit_three_models, screen_radiomic
 from survpanc import plots
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Pancreatic Cancer Prognosis Survival Pipeline (Unoptimized vs Optimized)")
+    ap = argparse.ArgumentParser(description="Pancreatic Cancer Prognosis Survival Pipeline (Baseline vs High-Signal Screening)")
     ap.add_argument("--data", help="CSV with duration, event, clinical columns, rad_* columns (default: synthetic cohort)")
     ap.add_argument("--out", default="outputs", help="Output directory")
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--folds", type=int, default=10)
     ap.add_argument("--repeats", type=int, default=1, help="repeated CV runs with different splits (default: 1 for fast comparison)")
+    ap.add_argument("--top-k", type=int, default=25, help="number of high-signal radiomic features to retain in the optimized model (default: 25)")
     ap.add_argument("--penalizer", type=float, default=None,
                     help="override penalizer to run a single specific value instead of comparing baseline vs optimal")
     ap.add_argument("--max-ci-width", type=float, default=None,
                     help="drop radiomic features whose 95%% CI is wider than this (paper: 1). Default: use --prune-frac")
     ap.add_argument("--prune-frac", type=float, default=0.456,
-                    help="fraction of widest-CI radiomic features to drop (paper removed 410/900)")
+                    help="fraction of widest-CI radiomic features to drop in the baseline (paper removed 410/900)")
     ap.add_argument("--smote-k", type=int, default=5, help="number of nearest neighbours for SMOTE (default: 5)")
     ap.add_argument("--thresholds", type=int, nargs="+", default=[240, 270, 300, 330, 360])
     a = ap.parse_args()
@@ -64,14 +66,15 @@ def main():
     if a.penalizer is not None:
         configs = {
             f"Custom (pen={a.penalizer})": dict(folds=a.folds, penalizer=a.penalizer,
-                                                max_ci_width=a.max_ci_width, prune_frac=a.prune_frac, smote_k=a.smote_k)
+                                                max_ci_width=a.max_ci_width, prune_frac=a.prune_frac,
+                                                smote_k=a.smote_k, method="screen", top_k=a.top_k)
         }
     else:
         configs = {
-            "Unoptimized (Baseline)": dict(folds=a.folds, penalizer=0.10,
-                                           max_ci_width=a.max_ci_width, prune_frac=a.prune_frac, smote_k=a.smote_k),
-            "Optimized (Tuned)":     dict(folds=a.folds, penalizer=0.05,
-                                           max_ci_width=a.max_ci_width, prune_frac=a.prune_frac, smote_k=a.smote_k),
+            "Unoptimized (Baseline)": dict(folds=a.folds, penalizer=0.10, max_ci_width=a.max_ci_width,
+                                           prune_frac=a.prune_frac, smote_k=a.smote_k, method="prune", top_k=a.top_k),
+            "Optimized (Screening)":  dict(folds=a.folds, penalizer=0.05, max_ci_width=a.max_ci_width,
+                                           prune_frac=a.prune_frac, smote_k=a.smote_k, method="screen", top_k=a.top_k),
         }
 
     # 3 ---- Cross-validated Cox models across configurations -----------------------------------
@@ -80,9 +83,10 @@ def main():
     kept_count = 0
 
     for vname, vcfg in configs.items():
-        print(f"\n" + "=" * 60)
-        print(f">>> Running {vname} (penalizer={vcfg['penalizer']}, prune_frac={vcfg['prune_frac']})...")
-        print("=" * 60)
+        v_desc = f"top_{vcfg['top_k']} signal features" if vcfg['method'] == 'screen' else f"prune_frac={vcfg['prune_frac']}"
+        print(f"\n" + "=" * 65)
+        print(f">>> Running {vname} (penalizer={vcfg['penalizer']}, {v_desc})...")
+        print("=" * 65)
         v_results, oof_main, kept = {}, None, []
         for mode in ["none", "in_fold", "leaky"]:
             fl = []
@@ -105,16 +109,16 @@ def main():
     # 4 ---- Side-by-Side Comparison Output ----------------------------------------------------
     if len(configs) > 1:
         unopt = version_results["Unoptimized (Baseline)"]
-        opt = version_results["Optimized (Tuned)"]
-        print("\n" + "=" * 82)
-        print("                      UNOPTIMIZED vs OPTIMIZED COMPARISON")
-        print("=" * 82)
-        print(f"{'Evaluation Metric / Feature Set':<32} | {'Unoptimized':<14} | {'Optimized':<14} | {'Delta':<12}")
-        print("-" * 82)
-        print(f"{'Penalizer (L2 Ridge)':<32} | {'0.10':<14} | {'0.05':<14} | {'-0.05':<12}")
-        print(f"{'SMOTE k-neighbors':<32} | {'5':<14} | {'5':<14} | {'0':<12}")
-        print(f"{'Prune Fraction':<32} | {'45.6%':<14} | {'45.6%':<14} | {'0':<12}")
-        print("-" * 82)
+        opt = version_results["Optimized (Screening)"]
+        print("\n" + "=" * 84)
+        print("              UNOPTIMIZED (BASELINE) vs OPTIMIZED (SCREENING) COMPARISON")
+        print("=" * 84)
+        print(f"{'Evaluation Metric / Feature Set':<32} | {'Unoptimized (Base)':<18} | {'Optimized (Screen)':<18} | {'Delta':<12}")
+        print("-" * 84)
+        print(f"{'Radiomic Dimension':<32} | {'490 features (CI)':<18} | {f'{a.top_k} features (C-idx)':<18} | {f'{a.top_k-490:+d} dims':<12}")
+        print(f"{'Penalizer (L2 Ridge)':<32} | {'0.10':<18} | {'0.05':<18} | {'-0.05':<12}")
+        print(f"{'SMOTE k-neighbors':<32} | {'5':<18} | {'5':<18} | {'0':<12}")
+        print("-" * 84)
 
         cmp_rows = []
         for mode_title, mode_key in [("Honest CV (in_fold)", "in_fold"), ("Paper-Style (leaky)", "leaky"), ("No SMOTE (none)", "none")]:
@@ -125,14 +129,16 @@ def main():
                     o = opt[mode_key].loc[m, "mean_cindex"]
                     d = o - u
                     pct = f"{d / u * 100:+.1f}%"
-                    print(f"  - {m.capitalize():<28} | {u:<14.4f} | {o:<14.4f} | {d:+7.4f} ({pct})")
-                    cmp_rows.append({"mode": mode_key, "model": m, "unoptimized": round(u, 4),
-                                     "optimized": round(o, 4), "delta": round(d, 4), "pct_change": pct})
-        print("=" * 82)
+                    print(f"  - {m.capitalize():<28} | {u:<18.4f} | {o:<18.4f} | {d:+7.4f} ({pct})")
+                    cmp_rows.append({"mode": mode_key, "model": m, "unoptimized_baseline": round(u, 4),
+                                     "optimized_screening": round(o, 4), "delta": round(d, 4), "pct_change": pct})
+        print("=" * 84)
 
         # Save tabular comparison and comparison figure
         pd.DataFrame(cmp_rows).to_csv(f"{a.out}/comparison_summary.csv", index=False)
-        plots.fig_comparison(unopt["in_fold"], opt["in_fold"], f"{a.out}/fig_comparison.png")
+        plots.fig_comparison(unopt["in_fold"], opt["in_fold"], f"{a.out}/fig_comparison.png",
+                             label_unopt="Baseline (CI Pruning, 490 feats)",
+                             label_opt=f"Optimized (Screening, {a.top_k} feats)")
         print(f"Comparison chart saved to: {a.out}/fig_comparison.png")
         print(f"Comparison summary CSV saved to: {a.out}/comparison_summary.csv")
 
@@ -146,7 +152,8 @@ def main():
     T, E = real.duration.values, real.event.values
     _, p_oof = logrank_test(T[~hi_oof], E[~hi_oof], T[hi_oof], E[hi_oof])
 
-    models, sets = fit_three_models(aug, clin, rad, best_cfg["penalizer"], best_cfg["max_ci_width"], best_cfg["prune_frac"])
+    models, sets = fit_three_models(aug, clin, rad, best_cfg["penalizer"], best_cfg.get("max_ci_width"),
+                                    best_cfg.get("prune_frac"), method=best_cfg.get("method"), top_k=best_cfg.get("top_k"))
     fkey = "combined" if "combined" in models else "clinical"
     comb = models[fkey]
     eta_in = comb.predict_log_hazard(df[sets[fkey]])
@@ -157,10 +164,16 @@ def main():
     plots.fig_km_groups([("Out-of-fold risk groups (honest)", T, E, hi_oof, p_oof),
                          ("In-sample risk groups (paper-style)", D, V, hi_in, p_in)], f"{a.out}/fig_km_groups.png")
 
-    # 6 ---- Interpretation -----------------------------------------------------------------------
+    # 6 ---- Interpretation & Screened Features --------------------------------------------------
     summ = comb.summary()
     summ.sort_values("coef", key=abs, ascending=False).head(25).to_csv(f"{a.out}/top_coefficients.csv")
     plots.fig_forest(summ, f"{a.out}/fig_forest.png")
+
+    if rad and best_cfg.get("method") == "screen":
+        screened_df = pd.DataFrame({"screened_feature": sets["radiomic"]})
+        screened_df.to_csv(f"{a.out}/screened_features.csv", index=False)
+        print(f"Top {len(sets['radiomic'])} screened features saved to {a.out}/screened_features.csv")
+
     tgrid = np.arange(0, int(df.duration.max()) + 1, 10)
     base = pd.DataFrame([df[sets[fkey]].mean()] * 1)
 

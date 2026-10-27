@@ -3,6 +3,7 @@ from survpanc.cox import CoxPH, concordance_index, kaplan_meier, logrank_test
 from survpanc.naive_bayes import Discretizer, NaiveBayes, risk_labels
 from survpanc.smote import smote_augment
 from survpanc.data import make_synthetic, split_columns, CATEGORICAL_COLS
+from survpanc.pipeline import screen_radiomic
 
 
 def test_concordance_perfect_and_reversed():
@@ -82,3 +83,12 @@ def test_synthetic_cohort_shape():
     df = make_synthetic()
     clin, rad = split_columns(df)
     assert len(df) == 80 and len(clin) == 12 and len(rad) == 900
+
+
+def test_screen_radiomic():
+    df = make_synthetic(n=60, n_radiomic=50, seed=12)
+    clin, rad = split_columns(df)
+    kept = screen_radiomic(df, rad, top_k=15)
+    assert len(kept) == 15
+    assert set(kept).issubset(set(rad))
+
